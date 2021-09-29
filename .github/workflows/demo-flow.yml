@@ -17,6 +17,7 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - run: echo " ${{ github.head_ref }} "
       # - name: Set appropriate env variable
       #   run: echo "REACT_APP_NODE_ENV=production" >> $GITHUB_ENV
       #   if: startsWith(github.event_name , 'refs/heads/prod')
