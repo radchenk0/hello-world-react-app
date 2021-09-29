@@ -1,6 +1,5 @@
 const envChecker = {
-  isProduction: () =>
-    process.env.REACT_APP_NODE_ENV?.toLocaleLowerCase() === 'production',
+  isProduction: () => process.env.REACT_APP_IS_PRODUCTION === 'true',
 };
 
 export default envChecker;
