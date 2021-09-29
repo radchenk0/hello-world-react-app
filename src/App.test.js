@@ -8,7 +8,11 @@ test('renders learn react link', () => {
 });
 
 test('checks REACT_APP_NODE_ENV value', () => {
+  render(<App />);
   const nodeEnv = process.env.REACT_APP_NODE_ENV;
-  console.log(nodeEnv);
-  expect(nodeEnv).toEqual('staging');
+  const isProduction = nodeEnv === 'production';
+  const element = screen.getByText(isProduction ? /production/i : /staging/i);
+  console.log(element.id);
+  console.log(element.textContent);
+  expect(element).toBeInTheDocument();
 });

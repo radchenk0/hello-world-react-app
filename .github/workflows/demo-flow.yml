@@ -17,5 +17,3 @@ jobs:
 
       - name: Build artifact
         run: yarn build
-
-      - run: echo "🔎 The secret TEST_SECRET is ${{ secrets.REACT_APP_NODE_ENV }}."

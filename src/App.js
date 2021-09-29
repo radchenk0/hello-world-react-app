@@ -1,7 +1,9 @@
 import logo from './logo.svg';
+import envChecker from './utils';
 import './App.css';
 
 function App() {
+  const isProduction = envChecker.isProduction();
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <p id={`${isProduction}_id`}>{isProduction ? 'production' : 'staging'}</p>
     </div>
   );
 }
