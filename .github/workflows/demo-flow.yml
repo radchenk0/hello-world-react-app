@@ -14,16 +14,16 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: yarn
+      # - name: Install dependencies
+      #   run: yarn
 
-      - run: echo " ${{ github.head_ref }} "
+      - run: echo "${{ github.ref }}"
       # - name: Set appropriate env variable
       #   run: echo "REACT_APP_NODE_ENV=production" >> $GITHUB_ENV
       #   if: startsWith(github.event_name , 'refs/heads/prod')
 
-      - name: Run tests
-        run: yarn test
+      # - name: Run tests
+      #   run: yarn test
 
-      - name: Build artifact
-        run: yarn build
+      # - name: Build artifact
+      #   run: yarn build
