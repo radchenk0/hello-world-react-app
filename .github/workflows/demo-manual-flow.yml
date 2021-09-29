@@ -1,10 +1,10 @@
-name: Demo FLow
-on: [push]
+name: Demo Manual FLow
+on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     env:
-      REACT_APP_NODE_ENV: ${{ secrets.REACT_APP_PRODUCTION_NODE_ENV }}
+      REACT_APP_NODE_ENV: ${{ secrets.REACT_APP_STAGING_NODE_ENV }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
