@@ -23,3 +23,5 @@ jobs:
 
       - name: Build artifact
         run: yarn build
+
+      - run: echo "GITHUB_EVENT_NAME ${{ github.event_name }}!"
