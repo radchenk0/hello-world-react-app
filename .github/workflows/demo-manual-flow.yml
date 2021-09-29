@@ -1,10 +1,16 @@
 name: Demo Manual FLow
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Codebase relies on this value and either includes or excludes test networks from the app setup. Possible values are production or staging.'
+        required: true
+        default: 'production'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     env:
-      REACT_APP_NODE_ENV: ${{ secrets.REACT_APP_STAGING_NODE_ENV }}
+      REACT_APP_NODE_ENV: ${{ github.event.inputs.environment }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
