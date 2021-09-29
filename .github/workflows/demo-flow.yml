@@ -1,0 +1,18 @@
+name: Demo FLow
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    env:
+      REACT_APP_NODE_ENV: ${{ secrets.REACT_APP_NODE_ENV }}
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Build artifact
+        run: yarn build
+
+      - run: echo "🔎 The secret TEST_SECRET is ${{ secrets.REACT_APP_NODE_ENV }}."
